@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="Materias.css">
+    <meta name="author" content="Astro Code">
+    <link rel="shortcut icon" href="Imagenes/iconoWebC.jpg">  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">    
+    <title>Home</title>
+</head>
+<body>
+    <div id="loading">
+        <img src="Imagenes/loading.png">
+    </div>
+
+    <div id="ContenedorGeneral">    
+        <div id="BotonesMateria"> 
+            <h1 id="BotonesMateria_F1">Ejercicios</h1>
+            <div id="BotonesMateria_F2">
+                <button id="B_Acceder" class="BotonesMateria_B" style=" margin-right: 2%;">Acceder</button>
+            </div>
+        </div>
+      
+        <div id="ContenedorMaterias"> 
+        </div>
+    </div>
+    <script src="BaseDatos.js"></script>
+</body>
+</html>
+
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics.js";
+    
+    const firebaseConfig = {
+        apiKey: window.apiKey,
+        authDomain: window.authDomain,
+        databaseURL: window.databaseURL,
+        projectId: window.projectId,
+        storageBucket: window.storageBucket,
+        messagingSenderId: window.messagingSenderId,
+        appId: window.appId,
+        measurementId: window.measurementId
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+
+    import {getDatabase,ref,set,child,update,remove,get,push,onValue}
+    from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
+    const db = getDatabase();
+    const dbRef = ref(getDatabase());
+    
+    //Variables Generales
+    localStorage.removeItem('Materia_ID');
+
+    LeerMaterias();
+
+    //Crear Nuevo
+    document.getElementById("B_Acceder").onclick = function(e){
+        // Crear una casilla de ingreso de clave
+        let clave = prompt("Por favor, ingrese la clave de acceso:");
+
+        // Verificar si la clave es correcta
+        if (clave === "12345") { // Reemplaza "tu_clave_correcta" con la clave real
+            localStorage.removeItem('Materia_ID');
+            location.href = "Materias.html";
+        } else {
+            alert("Clave incorrecta. Inténtalo de nuevo.");
+        }     
+    }
+
+    //Leer y Crear Modulo de las materias
+    function LeerMaterias(){
+        get(child(dbRef, "Ejercicios")).then((snapshot) => {
+            if(snapshot.exists()){
+                var Materia_Existe = true;
+                const keys = Object.keys(snapshot.val()).reverse();  
+                keys.forEach((key) => {
+                    const hijo = snapshot.val()[key];
+                    
+                    Materia_Existe = false;
+                    var Problema = hijo.Problema;                        
+                    var Estado = hijo.Estado;
+
+                    if(Estado == "Público"){
+                        CrearModulos(key,Problema,Estado);
+                    }                    
+                    
+                });    
+
+                document.getElementById("loading").style.display = "none";
+                document.getElementById("ContenedorGeneral").style.display = "inline-block";
+            }
+            else{
+                document.getElementById("loading").style.display = "none";
+                document.getElementById("ContenedorGeneral").style.display = "inline-block";
+                return;
+            }
+        })
+        .catch((error) => {
+            LeerMaterias();
+        });
+    }
+
+    function CrearModulos(key,Problema,Estado){
+        const ContenedorMaterias = document.getElementById("ContenedorMaterias");
+
+        const contenedorMateriasBloque = document.createElement('div');
+        contenedorMateriasBloque.classList.add('ContenedorMaterias_Bloque');
+        contenedorMateriasBloque.id = key+"_Div";
+        contenedorMateriasBloque.onclick = (function() { IrMenu(key);});    
+
+        const contenedorMateriasBloqueF1 = document.createElement('div');
+        contenedorMateriasBloqueF1.classList.add('ContenedorMaterias_Bloque_F1');
+
+        const imgF1 = document.createElement('img');
+        imgF1.src = 'Imagenes/iconoWebC.jpg';
+        contenedorMateriasBloqueF1.appendChild(imgF1);
+
+        const contenedorMateriasBloqueF2 = document.createElement('div');
+        contenedorMateriasBloqueF2.classList.add('ContenedorMaterias_Bloque_F2');
+
+        const pF2 = document.createElement('p');
+        pF2.textContent = Problema;
+        contenedorMateriasBloqueF2.appendChild(pF2);
+
+        contenedorMateriasBloque.appendChild(contenedorMateriasBloqueF1);
+        contenedorMateriasBloque.appendChild(contenedorMateriasBloqueF2);
+
+        // Añadir el contenedor principal al body (o a cualquier otro elemento)
+        ContenedorMaterias.appendChild(contenedorMateriasBloque);
+    }
+
+    function IrMenu(key){
+        localStorage.setItem('Materia_ID',key);
+        location.href="Resolver_Problema.html";
+    }
+</script>

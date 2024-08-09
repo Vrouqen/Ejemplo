@@ -1,0 +1,292 @@
+/* styles.css */
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+html, body {
+    font-family: Arial, sans-serif;
+    height: 100%;  
+    margin: 0;
+    background-color: #f0f0f0;
+    width: 100%;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+
+#ContenedorGeneral{
+    width: 100%;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 4%;
+    padding-right: 4%;
+    box-sizing: border-box;
+    display: inline;
+}
+
+#loading{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: none;
+}
+
+#loading img{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+
+
+textarea{
+    resize: none;
+    height: 300px;
+    width: 240px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+h2{
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+p{
+    text-align: left;
+}
+
+.Text_Formulario{
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+
+#In_5{
+    height: 100px;
+}
+
+input{
+    width: 100%;
+    height: 20px;
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+button{
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: forestgreen;
+    font-size: 20px;
+    color: white;
+    height: 40px;
+}
+
+.Contenedor{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    margin: 0;
+    background-color: #f0f0f0;
+    width: 100%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    overflow-x: auto;
+}
+
+.Formulario{    
+    margin-top: 10px;
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;  
+    overflow: hidden;
+    overflow-x: auto;
+    box-sizing: border-box;
+    width: 90%;
+    text-align: left;
+}
+
+.fishbone {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;  
+    overflow: hidden;
+    overflow-x: auto;
+    box-sizing: border-box;
+}
+
+.head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffcccb;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.2;
+    margin-left: 20px;
+}
+
+.problem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffa;
+    height: auto;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.2;
+    margin-top: 0px;
+    margin-left: 20px;
+}
+
+.spine {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    margin-left: 20px;
+}
+
+.bone-pair {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+}
+
+.bone {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    position: relative;
+}
+
+.bone::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    position: absolute;
+    /* left: 100px; */
+}
+
+.category {
+    background-color: #add8e6;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+.causes {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+.cause {
+    background-color: #e0e0e0;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 5px 0;
+    width: 250px;
+}
+
+
+#Divisor{
+    display: flex;
+    overflow-x: auto;
+}
+
+#Divisor div{
+    flex: 1;
+}
+
+#Mostrar2{
+    display: none;
+}
+
+
+.fila{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    min-width: 400px;
+    align-items: center;
+}
+.celda {
+    flex: 1;
+    min-width: 180px;
+    padding: 5px; /* Espacio entre las celdas, opcional */
+}
+
+.AnchoTabla {
+    flex: 0 0 250px; /* Fija el ancho de la primera celda */
+    font-weight: bold;
+}
+
+
+#ContenedorLista{
+    margin-bottom: 20px;
+}
+
+
+
+.tabla-contenedor {
+    overflow-x: auto;
+    width: 90%;
+}
+table{
+    background-color: #ffffff;
+    text-align: center;
+    border-collapse: collapse;
+    width: 100%;
+    height: 2%;    
+    margin-top: 10px;    
+}
+
+th,td{
+    padding: 15px;
+    font-size: 14px;
+
+}
+
+
+thead{
+    background-color: #002853;       
+    border-bottom: solid 1px #000000;
+    color: #ffffff;
+    position: sticky;
+    top: 0;   
+ }
+
+
+tr:hover{
+    background-color: #DE911F;
+    color: white;
+    cursor: pointer;
+}
+

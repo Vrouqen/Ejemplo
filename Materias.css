@@ -1,0 +1,344 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;  
+    font-family: "Roboto", sans-serif;
+    background-color: #ffffff; 
+}
+
+h1{
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+h2{
+    font-size: 25px;
+    color: #0046C8;
+    margin-bottom: 10px;
+}
+h3{
+    font-size: 18px;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+button{
+    cursor: pointer;    
+}
+
+input{
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+textarea{
+    width: 100%;
+    height: 100px;
+    padding: 5px;
+    box-sizing: border-box;
+    resize: none;
+    font-family: "Roboto", sans-serif;
+}
+
+#loading{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: inline;
+}
+#loading img{
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+}
+  
+
+#ContenedorGeneral{
+    width: 100%;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 4%;
+    padding-right: 4%;
+    box-sizing: border-box;
+    display: none;
+}
+
+
+#Regresar{
+    width: 100px;
+    background-color: #DE911F;
+    color: rgb(255, 255, 255);
+    font-size: 35px;
+    margin-bottom: 40px;
+    border-radius: 5px;
+}
+
+#BotonesMateria{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+#BotonesMateria_F1{
+    flex: 1;
+}
+#BotonesMateria_F2{
+    flex: 3;
+    text-align: right;
+}
+.BotonesMateria_B{
+    width: 250px;
+    background-color: #DE911F;
+    color: rgb(255, 255, 255);
+    font-size: 17px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+#CambiarPropietario{
+    width: 100%;
+    text-align: right;
+    margin-bottom: 5px;
+}
+#B_Cambiar_Propietario{
+    display: none;
+}
+
+
+#CambiarPropietario button{
+    width: 250px;
+    background-color: #DE911F;
+    color: rgb(255, 255, 255);
+    font-size: 17px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+#Crear_Editar_Materia{
+    display: none;
+}
+
+.ContenedorMaterias_Bloque{
+    background-color: #EEEEEE;
+    border-radius: 20px;
+    width: 100%;
+    padding: 20px 40px 20px 40px;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+
+.ContenedorMaterias_Bloque_F1{
+    width: 100px;
+    align-content: center;
+    overflow: hidden;
+}
+.ContenedorMaterias_Bloque_F2{
+    flex: 1;
+    margin-left: 30px;
+    overflow: hidden;
+}
+.ContenedorMaterias_Bloque_F3{
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    align-items: flex-end;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.ContenedorMaterias_Bloque_F1 img{
+    width: 7%;
+    min-width: 100px;
+    border-radius: 10px;
+}
+
+.ContenedorMaterias_Bloque_F2_Clave{
+    margin-top: 10px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-style: italic;
+}
+
+.ContenedorMaterias_Bloque_F3_Estado{
+    display: flex;
+    align-items: center;
+}
+
+#ContenedorMaterias_Bloque_F3_Div{
+    width: 90%;
+}
+
+.ContenedorMaterias_Bloque_F3_Botones{
+    width: 100%;
+    background-color: #DE911F;
+    color: rgb(255, 255, 255);
+    font-size: 17px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Inicia el interruptor */
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 65px;
+    height: 25px;
+    cursor: pointer;
+  }
+  
+  .toggle-switch input[type="checkbox"] {
+    display: none;
+  }
+  
+  .toggle-switch-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ddd;
+    border-radius: 20px;
+    box-shadow: inset 0 0 0 2px #ccc;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .toggle-switch-handle {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .toggle-switch::before {
+    content: "";
+    position: absolute;
+    top: -25px;
+    right: -35px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #aaa;
+    text-shadow: 1px 1px #fff;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .toggle-switch input[type="checkbox"]:checked + .toggle-switch-handle {
+    transform: translateX(45px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 0 0 0 3px #0046C8;
+  }
+  
+  .toggle-switch input[type="checkbox"]:checked + .toggle-switch-background {
+    background-color: #0046C8;
+    box-shadow: inset 0 0 0 2px #0046C8;
+  }
+  
+  .toggle-switch input[type="checkbox"]:checked + .toggle-switch:before {
+    content: "On";
+    color: #0046C8;
+    right: -15px;
+  }
+  
+  .toggle-switch input[type="checkbox"]:checked + .toggle-switch-background .toggle-switch-handle {
+    transform: translateX(40px);
+  }
+
+  /* Finaliza el interruptor */
+
+
+
+  .ContenedorMaterias_Bloque_F3_Acciones img{
+    width: 30px;
+    cursor: pointer;
+  }
+
+@media screen  and (max-width:800px){       
+    
+    #BotonesMateria{
+        display: inline;
+    }
+
+    #BotonesMateria_F2{
+        text-align: left;
+    }
+      
+    .BotonesMateria_B{
+        width: 48.5%;
+    }
+
+    .ContenedorMaterias_Bloque_F3{
+        width: 100%;       
+        flex-direction: row;
+        margin-top: 30px;
+    }
+
+    #ContenedorMaterias_Bloque_F3_Div{
+        width: 100%;       
+    }
+
+    #CambiarPropietario button{
+        width: 100%;
+    }
+
+    #CambiarPropietario{      
+        margin-bottom: 20px;
+    }
+    
+}  
+
+@media screen  and (max-width:700px){       
+    
+    .BotonesMateria_B{
+        font-size: 15px;
+    }
+}  
+
+@media screen  and (max-width:650px){       
+    
+    .BotonesMateria_B{
+        font-size: 15px;
+        width: 100%;
+    }
+}  
+
+
+@media screen  and (max-width:450px){       
+    .ContenedorMaterias_Bloque{    
+        flex-direction: column;
+    }
+
+    .ContenedorMaterias_Bloque_F2{
+        margin-top: 20px;
+        margin-left: 0px;
+    }
+    .ContenedorMaterias_Bloque_F3{
+        flex-direction: column;
+    }
+    .ContenedorMaterias_Bloque_F3_Acciones img{
+        margin-top: 20px;
+      }
+   
+}  
+

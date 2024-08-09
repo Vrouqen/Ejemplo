@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear y Editar</title>
+    <link rel="shortcut icon" href="Imagenes/iconoWebC.jpg">  
+    <link rel="stylesheet" href="Crear_Ver.css">
+</head>
+<body>
+    <div id="loading">
+        <img src="Imagenes/loading.png">
+    </div>
+    <div id="ContenedorGeneral">
+        <h1>Registro del Problema</h1>
+        <div class="Contenedor">
+            <div class="Formulario">
+                <h2>¿Qué?</h2>    
+                <textarea id="In_1" class="Text_Formulario" placeholder="Especifica el problema aquí"></textarea> 
+                
+                <h2>¿Dónde?</h2>    
+                <textarea id="In_2" class="Text_Formulario" placeholder="Ubicación del problema"></textarea> 
+
+                <h2>¿Cuándo?</h2>    
+                <textarea id="In_3" class="Text_Formulario" placeholder="Fecha y hora del problema"></textarea> 
+
+                <h2>¿Quién?</h2>    
+                <textarea id="In_4" class="Text_Formulario" placeholder="Persona involucrada"></textarea> 
+
+                <h2>Problema</h2>    
+                <textarea id="In_5" class="Text_Formulario" placeholder="Problema completo"></textarea> 
+                
+                <button id="Guardar">Guardar</button>
+            </div>
+
+            <div id="ListaSeleccionados" class="tabla-contenedor"> 
+                <table id="EstudiantesSeleccionados" border="1">
+                    <thead>
+                            <tr> 
+                                <th>Cédula</th>
+                                <th>Nombre</th>
+                                <th>Calificación</th>
+                            </tr>                              
+                    </thead>                                     
+                </table>
+    
+            </div>  
+        </div>
+
+    </div>
+
+    <script src="BaseDatos.js"></script>
+
+</body>
+</html>
+
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics.js";
+    
+    const firebaseConfig = {
+        apiKey: window.apiKey,
+        authDomain: window.authDomain,
+        databaseURL: window.databaseURL,
+        projectId: window.projectId,
+        storageBucket: window.storageBucket,
+        messagingSenderId: window.messagingSenderId,
+        appId: window.appId,
+        measurementId: window.measurementId
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+
+    import {getDatabase,ref,set,child,update,remove,get,push,onValue}
+    from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
+    const db = getDatabase();
+    const dbRef = ref(getDatabase());
+   
+
+    var ID = localStorage.getItem('Materia_ID');
+
+    if(ID != null){
+        document.getElementById("loading").style.display = "inline";
+        document.getElementById("ContenedorGeneral").style.display = "none";          
+        LeerMaterias();
+    }
+
+    //Leer y Crear Modulo de las materias
+    function LeerMaterias(){
+        get(child(dbRef, "Ejercicios/"+ID)).then((snapshot) => {
+            if(snapshot.exists()){                
+
+                var Que = snapshot.val().Que;
+                var Donde = snapshot.val().Donde;
+                var Cuando = snapshot.val().Cuando;
+                var Quien = snapshot.val().Quien;
+                var Problema = snapshot.val().Problema;
+
+                document.getElementById("In_1").value = Que;
+                document.getElementById("In_2").value = Donde;
+                document.getElementById("In_3").value = Cuando;
+                document.getElementById("In_4").value = Quien;
+                document.getElementById("In_5").value = Problema;
+
+                document.getElementById("loading").style.display = "none";
+                document.getElementById("ContenedorGeneral").style.display = "inline";                
+            }
+            else{
+                location.href = "Materias.html";
+                return;
+            }
+        })
+        .catch((error) => {
+            LeerMaterias();
+        });
+    }
+  
+    //Funciones de Acción
+    document.getElementById("Guardar").onclick = function(e){
+        var In_1 = document.getElementById("In_1").value;
+        var In_2 = document.getElementById("In_2").value;
+        var In_3 = document.getElementById("In_3").value;
+        var In_4 = document.getElementById("In_4").value;
+        var In_5 = document.getElementById("In_5").value;
+
+
+        if(In_1 == ""){
+            alert("En la sección de Problema de registro, falta ingresar el campo 'Qué'")
+            return;
+        }
+        if(In_2 == ""){
+            alert("En la sección de Problema de registro, falta ingresar el campo 'Dónde'")
+            return;
+        }
+        if(In_3 == ""){
+            alert("En la sección de Problema de registro, falta ingresar el campo 'Cuándo'")
+            return;
+        }
+        if(In_4 == ""){
+            alert("En la sección de Problema de registro, falta ingresar el campo 'Quién'")
+            return;
+        }
+        if(In_5 == ""){
+            alert("En la sección de Analizar el problema, falta ingresar el Problema")
+            return;
+        }
+        if(!window.navigator.onLine){
+            alert("Compruebe la conexión a internet");
+            return;
+        } 
+
+        if(ID != null){
+            Actualizar(ID,In_1,In_2,In_3,In_4,In_5);
+        }
+        else{
+            Crear(In_1,In_2,In_3,In_4,In_5);               
+        }
+
+    }
+
+    function Crear(In_1,In_2,In_3,In_4,In_5){
+        var Crear_Ejercicio = ref(db, "Ejercicios/");                        
+        // Añadir un nuevo elemento utilizando push
+        const nuevoPushRef = push(Crear_Ejercicio, {
+            Que: In_1,           
+            Donde: In_2,           
+            Cuando: In_3,           
+            Quien: In_4,           
+            Problema: In_5,
+            Estado: "Privado"
+        });
+
+        // Obtener el nombre del push generado
+        const nuevoPushKey = nuevoPushRef.key;
+
+        nuevoPushRef.then(() => {
+            alert("Se creo correctamente");
+            localStorage.setItem('Materia_ID',nuevoPushKey);
+            location.reload();
+        })
+        .catch((error) => {
+            remove(ref(db, "Ejercicios/"+nuevoPushKey));   
+            Crear(In_1,In_2,In_3,In_4,In_5);               
+        });
+    }
+
+    function Actualizar(ID,In_1,In_2,In_3,In_4,In_5){
+        update(ref(db,"Ejercicios/"+ID),{
+            Que: In_1,           
+            Donde: In_2,           
+            Cuando: In_3,           
+            Quien: In_4,           
+            Problema: In_5
+
+        })
+        .then(()=>{
+            alert("Se modificó correctamente");
+            location.reload();
+        })
+        .catch((error)=>{
+            Actualizar(ID,In_1,In_2,In_3,In_4,In_5);
+        });
+    }
+    
+    onValue(child(dbRef, "Ejercicios/"+ID+"/Respuestas"), (snapshot) => {
+        if (snapshot.exists()) {
+            var tableHeaderRowCount = 1;
+            var table = document.getElementById('EstudiantesSeleccionados');
+            var rowCount = table.rows.length;
+            for (var i = tableHeaderRowCount; i < rowCount; i++) {            
+                table.deleteRow(tableHeaderRowCount);
+            }            
+            LeerPerfiles();
+        }      
+    });
+
+    function LeerPerfiles(){
+        get(child(dbRef, "Ejercicios/"+ID+"/Respuestas")).then((snapshot) => {
+            if (snapshot.exists()) {
+                const keys = Object.keys(snapshot.val());  
+
+                keys.forEach((key) => {
+                    const hijo = snapshot.val()[key];
+
+                    var NombreA = hijo.NombreA;
+                    var CedulaA = hijo.CedulaA;
+                    var Calificacion = hijo.Calificacion;
+
+                    let TablaCursos = document.getElementById("EstudiantesSeleccionados");
+
+                    let fila = document.createElement("tr");
+                    fila.onclick = (function() { Acciones(key);});    
+
+                    let td = document.createElement("td");
+                    td.innerText = CedulaA;                                                    
+                    fila.appendChild(td);
+
+                    td = document.createElement("td");
+                    td.innerText = NombreA;                                
+                    fila.appendChild(td);
+
+                    td = document.createElement("td");
+                    td.innerText = Calificacion;                                
+                    fila.appendChild(td);                  
+
+                    TablaCursos.appendChild(fila);  
+                });    
+            }                                      
+        })
+        .catch((error) => {      
+            location.reload();
+        });        
+    }
+
+    function Acciones(key){
+        localStorage.setItem('Alumno',key);
+        location.href = "Revicion_Alumno.html";
+    }
+</script>
+
+

@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revisión Alumno</title>
+    <link rel="shortcut icon" href="Imagenes/iconoWebC.jpg">  
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+
+    <div id="loading">
+        <img src="Imagenes/loading.png">
+    </div>
+
+    <div id="ContenedorGeneral">
+        <h1>Problema de registro</h1>
+        <div class="Contenedor">
+            <div class="Formulario">       
+                <h2>Nombre del Estudiante</h2>    
+                <input disabled id="In_NombreA" class="Text_Formulario" autocomplete="off" placeholder="Ingrese su nombre">
+    
+                <h2>Cédula del Estudiante</h2>    
+                <input disabled id="In_Cedula" class="Text_Formulario" autocomplete="off" placeholder="Ingrese su cédula">
+                
+                <h2>¿Qué?</h2>    
+                <textarea id="In_1" class="Text_Formulario" placeholder="Especifica el problema aquí" disabled>La línea de producción se detuvo inesperadamente.</textarea> 
+                
+                <h2>¿Dónde?</h2>    
+                <textarea id="In_2" class="Text_Formulario" placeholder="Ubicación del problema" disabled>Planta de ensamblaje, Línea 2.</textarea> 
+    
+                <h2>¿Cuándo?</h2>    
+                <textarea id="In_3" disabled class="Text_Formulario" placeholder="Fecha y hora del problema">25 de julio de 2024, 10:30 AM.</textarea> 
+    
+                <h2>¿Quién?</h2>    
+                <textarea id="In_4" disabled class="Text_Formulario" placeholder="Persona involucrada">Operador Juan Pérez</textarea> 
+            </div>
+    
+        </div>
+    
+    
+        <div id="Divisor">
+            <div id="Mostrar1">
+                <h1>Analizar el problema</h1>
+                <div class="Contenedor">
+                    <div class="fishbone">
+            
+                        <div class="problem">
+                            <table>
+                                <tr>
+                                    <th>Problema</th>
+                                </tr>
+                                <tr>
+                                    <td><textarea disabled id="In_5">La combinación de un fallo en el motor de la maquinaria y el uso de materiales de calidad inferior provocó la parada de la línea de producción. Factores adicionales como la falta de capacitación adecuada del personal, la ausencia de mantenimiento preventivo programado, la supervisión ineficaz, y las condiciones ambientales desfavorables también contribuyeron al problema.</textarea></td>
+                                </tr>
+                            </table>
+                
+                        </div>
+                
+                        <div class="bone">
+                            <div class="causes">
+                                <div class="cause">
+                                    <table>
+                                        <tr>
+                                            <th>Gestión</th>
+                                        </tr>
+                                        <tr>
+                                            <td><textarea disabled id="In_8" placeholder="1.
+                                                2.
+                                                3.
+                                                4.
+                                                5."></textarea></td>
+                                        </tr>                      
+                                    </table>
+                                    
+                                </div>
+                                <div class="cause">
+                                    <table>
+                                        <tr>
+                                            <th>Medio</th>
+                                        </tr>
+                                        <tr>
+                                            <td><textarea disabled id="In_11" placeholder="1.
+                                                2.
+                                                3.
+                                                4.
+                                                5."></textarea></td>
+                                        </tr>
+                                       
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bone">
+                            <div class="causes">
+                                <div class="cause">
+                                    <table>
+                                        <tr>
+                                            <th>Máquina</th>
+                                        </tr>
+                                        <tr>
+                                            <td><textarea disabled id="In_7" placeholder="1.
+                                                2.
+                                                3.
+                                                4.
+                                                5."></textarea></td>
+                                        </tr>                      
+                                    </table>
+                                    
+                                </div>
+                                <div class="cause">
+                                    <table>
+                                        <tr>
+                                            <th>Material</th>
+                                        </tr>
+                                        <tr>
+                                            <td><textarea disabled id="In_10" placeholder="1.
+                                                2.
+                                                3.
+                                                4.
+                                                5."></textarea></td>
+                                        </tr>
+                                       
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bone">
+                            <div class="causes">
+                                <div class="cause">
+                                    <table>
+                                        <tr>
+                                            <th>Hombre</th>
+                                        </tr>
+                                        <tr>
+                                            <td><textarea disabled id="In_6" placeholder="1.
+                                                2.
+                                                3.
+                                                4.
+                                                5."></textarea></td>
+                                        </tr>                      
+                                    </table>
+                                    
+                                </div>
+                                <div class="cause">
+                                    <table>
+                                        <tr>
+                                            <th>Método</th>
+                                        </tr>
+                                        <tr>
+                                            <td><textarea disabled id="In_9" placeholder="1.
+                                                2.
+                                                3.
+                                                4.
+                                                5."></textarea></td>
+                                        </tr>
+                                       
+                                    </table>
+                                </div>
+                            </div>
+                        </div>          
+                    </div>
+            
+                </div>
+            
+            
+            
+                <h1>Identificar las causas</h1>
+            
+                <div class="Contenedor">
+            
+                    <div class="fishbone">
+                
+                         
+                        <div class="causes">
+                            <div class="cause">
+                                <table>
+                                    <tr>
+                                        <th><input disabled id="In_14" autocomplete="off" placeholder="C"></th>
+                                    </tr>
+                                    <tr>
+                                        <td><textarea disabled id="In_15" placeholder="1.
+                                            2.
+                                            3.
+                                            4.
+                                            5."></textarea></td>
+                                    </tr>                      
+                                </table>
+                                
+                            </div>                   
+                        </div>                           
+                        <div class="causes">
+                            <div class="cause">
+                                <table>
+                                    <tr>
+                                        <th><input disabled id="In_12" autocomplete="off" placeholder="B"></th>
+                                    </tr>
+                                    <tr>
+                                        <td><textarea  disabled id="In_13" placeholder="1.
+                                            2.
+                                            3.
+                                            4.
+                                            5."></textarea></td>
+                                    </tr>                      
+                                </table>
+                                
+                            </div>                   
+                        </div>  
+                        <div class="causes">
+                            <div class="cause">
+                                <table>
+                                    <tr>
+                                        <th><input disabled id="In_16" autocomplete="off" placeholder="A"></th>
+                                    </tr>
+                                    <tr>
+                                        <td><textarea disabled id="In_17" placeholder="1.
+                                            2.
+                                            3.
+                                            4.
+                                            5."></textarea></td>
+                                    </tr>                      
+                                </table>
+                                
+                            </div>                   
+                        </div>   
+                    </div>
+            
+                </div>
+            
+            
+                <h1>Tomar Acción</h1>
+            
+                <div class="Contenedor">
+            
+                    <div class="fishbone">
+                                         
+                        
+                        <div class="causes">
+                            <div class="cause">
+                                <table>
+                                    <tr>
+                                        <th>¿Cuándo?</th>
+                                    </tr>
+                                    <tr>
+                                        <td><textarea disabled id="In_20" placeholder="1.
+                                            2.
+                                            3.
+                                            4.
+                                            5."></textarea></td>
+                                    </tr>                      
+                                </table>
+                                
+                            </div>                   
+                        </div>
+            
+            
+              
+                        <div class="causes">
+                            <div class="cause">
+                                <table>
+                                    <tr>
+                                        <th>¿Quién?</th>
+                                    </tr>
+                                    <tr>
+                                        <td><textarea disabled id="In_19" placeholder="1.
+                                            2.
+                                            3.
+                                            4.
+                                            5."></textarea></td>
+                                    </tr>                      
+                                </table>
+                                
+                            </div>                   
+                        </div>   
+                        
+            
+                        <div class="causes">
+                            <div class="cause">
+                                <table>
+                                    <tr>
+                                        <th>¿Qué?</th>
+                                    </tr>
+                                    <tr>
+                                        <td><textarea disabled id="In_18" placeholder="1.
+                                            2.
+                                            3.
+                                            4.
+                                            5."></textarea></td>
+                                    </tr>                      
+                                </table>
+                                
+                            </div>                   
+                        </div> 
+                        
+                    </div>
+            
+                </div>
+            
+        
+        
+            </div>
+        
+            <div id="Mostrar2">
+        
+        
+                <h1>Analizar el problema con ChatGPT</h1>
+        
+                <div class="Contenedor">
+            
+                    <div class="fishbone">
+            
+                        <div class="problem">
+                            <table>
+                                <tr>
+                                    <th>Problema</th>
+                                </tr>
+                                <tr>
+                                    <td><textarea disabled id="InC_5"></textarea></td>
+                                </tr>
+                            </table>
+                
+                        </div>
+                
+                        <div class="bone">
+                            <div class="causes">
+                                <div class="cause">
+                                    <table>
+                                        <tr>
+                                            <th>Gestión</th>
+                                        </tr>
+                                        <tr>
+                                            <td><textarea disabled id="InC_8" placeholder="1.
+                                                2.
+                                                3.
+                                                4.
+                                                5."></textarea></td>
+                                        </tr>                      
+                                    </table>
+                                    
+                                </div>
+                                <div class="cause">
+                                    <table>
+                                        <tr>
+                                            <th>Medio</th>
+                                        </tr>
+                                        <tr>
+                                            <td><textarea disabled id="InC_11" placeholder="1.
+                                                2.
+                                                3.
+                                                4.
+                                                5."></textarea></td>
+                                        </tr>
+                                       
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bone">
+                            <div class="causes">
+                                <div class="cause">
+                                    <table>
+                                        <tr>
+                                            <th>Máquina</th>
+                                        </tr>
+                                        <tr>
+                                            <td><textarea disabled id="InC_7" placeholder="1.
+                                                2.
+                                                3.
+                                                4.
+                                                5."></textarea></td>
+                                        </tr>                      
+                                    </table>
+                                    
+                                </div>
+                                <div class="cause">
+                                    <table>
+                                        <tr>
+                                            <th>Material</th>
+                                        </tr>
+                                        <tr>
+                                            <td><textarea disabled id="InC_10" placeholder="1.
+                                                2.
+                                                3.
+                                                4.
+                                                5."></textarea></td>
+                                        </tr>
+                                       
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bone">
+                            <div class="causes">
+                                <div class="cause">
+                                    <table>
+                                        <tr>
+                                            <th>Hombre</th>
+                                        </tr>
+                                        <tr>
+                                            <td><textarea disabled id="InC_6" placeholder="1.
+                                                2.
+                                                3.
+                                                4.
+                                                5."></textarea></td>
+                                        </tr>                      
+                                    </table>
+                                    
+                                </div>
+                                <div class="cause">
+                                    <table>
+                                        <tr>
+                                            <th>Método</th>
+                                        </tr>
+                                        <tr>
+                                            <td><textarea disabled id="InC_9" placeholder="1.
+                                                2.
+                                                3.
+                                                4.
+                                                5."></textarea></td>
+                                        </tr>
+                                       
+                                    </table>
+                                </div>
+                            </div>
+                        </div>          
+                    </div>
+            
+                </div>
+            
+            
+            
+                <h1>Identificar las causas con ChatGPT</h1>
+            
+                <div class="Contenedor">
+            
+                    <div class="fishbone">
+                
+                         
+                        <div class="causes">
+                            <div class="cause">
+                                <table>
+                                    <tr>
+                                        <th><input disabled id="InC_14" autocomplete="off" placeholder="C"></th>
+                                    </tr>
+                                    <tr>
+                                        <td><textarea disabled id="InC_15" placeholder="1.
+                                            2.
+                                            3.
+                                            4.
+                                            5."></textarea></td>
+                                    </tr>                      
+                                </table>
+                                
+                            </div>                   
+                        </div>                            
+                        <div class="causes">
+                            <div class="cause">
+                                <table>
+                                    <tr>
+                                        <th><input disabled id="InC_12" autocomplete="off" placeholder="B"></th>
+                                    </tr>
+                                    <tr>
+                                        <td><textarea disabled id="InC_13" placeholder="1.
+                                            2.
+                                            3.
+                                            4.
+                                            5."></textarea></td>
+                                    </tr>                      
+                                </table>
+                                
+                            </div>                   
+                        </div>  
+                        <div class="causes">
+                            <div class="cause">
+                                <table>
+                                    <tr>
+                                        <th><input disabled id="InC_16" autocomplete="off" placeholder="A"></th>
+                                    </tr>
+                                    <tr>
+                                        <td><textarea disabled id="InC_17" placeholder="1.
+                                            2.
+                                            3.
+                                            4.
+                                            5."></textarea></td>
+                                    </tr>                      
+                                </table>
+                                
+                            </div>                   
+                        </div>   
+    
+                       
+                    </div>
+            
+                </div>
+            
+            
+                <h1>Tomar Acción con ChatGPT</h1>
+            
+                <div class="Contenedor">
+            
+                    <div class="fishbone">
+                                         
+                        
+                        <div class="causes">
+                            <div class="cause">
+                                <table>
+                                    <tr>
+                                        <th>¿Cuándo?</th>
+                                    </tr>
+                                    <tr>
+                                        <td><textarea disabled id="InC_20" placeholder="1.
+                                            2.
+                                            3.
+                                            4.
+                                            5."></textarea></td>
+                                    </tr>                      
+                                </table>
+                                
+                            </div>                   
+                        </div>
+            
+            
+              
+                        <div class="causes">
+                            <div class="cause">
+                                <table>
+                                    <tr>
+                                        <th>¿Quién?</th>
+                                    </tr>
+                                    <tr>
+                                        <td><textarea disabled id="InC_19" placeholder="1.
+                                            2.
+                                            3.
+                                            4.
+                                            5."></textarea></td>
+                                    </tr>                      
+                                </table>
+                                
+                            </div>                   
+                        </div>   
+                        
+            
+                        <div class="causes">
+                            <div class="cause">
+                                <table>
+                                    <tr>
+                                        <th>¿Qué?</th>
+                                    </tr>
+                                    <tr>
+                                        <td><textarea disabled id="InC_18" placeholder="1.
+                                            2.
+                                            3.
+                                            4.
+                                            5."></textarea></td>
+                                    </tr>                      
+                                </table>
+                                
+                            </div>                   
+                        </div> 
+                        
+                    </div>
+            
+                </div>
+            
+        
+        
+            </div>
+        </div>   
+    
+    
+        <br>
+        <h1>Reporte</h1>
+    
+        <div class="Contenedor">
+    
+            <div class="Formulario">
+    
+                <p id="Informe"></p>
+    
+            
+            </div>
+    
+        </div>
+    
+    </div>
+
+   
+    <script src="BaseDatos.js"></script>
+
+</body>
+</html>
+
+
+<script type="module">
+
+
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics.js";
+    
+    const firebaseConfig = {
+        apiKey: window.apiKey,
+        authDomain: window.authDomain,
+        databaseURL: window.databaseURL,
+        projectId: window.projectId,
+        storageBucket: window.storageBucket,
+        messagingSenderId: window.messagingSenderId,
+        appId: window.appId,
+        measurementId: window.measurementId
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+
+    import {getDatabase,ref,set,child,update,remove,get,push,onValue}
+    from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
+    const db =getDatabase();
+    const dbRef = ref(getDatabase());
+   
+
+    var ID = localStorage.getItem('Materia_ID');
+    var ID_Alumno = localStorage.getItem('Alumno');
+
+
+    if(ID == null && ID_Alumno == null){
+       location.href = "Materias.html";
+    }
+
+
+
+   
+    LeerMaterias();
+
+    //Leer Base de datos
+    function LeerMaterias(){
+        get(child(dbRef, "Ejercicios/"+ID)).then((snapshot) => {
+            if(snapshot.exists()){                
+
+                var Que = snapshot.val().Que;
+                var Donde = snapshot.val().Donde;
+                var Cuando = snapshot.val().Cuando;
+                var Quien = snapshot.val().Quien;
+                var Problema = snapshot.val().Problema;
+
+                var In_6 = snapshot.child("Respuestas").child(ID_Alumno).val().In_6;
+                var In_7 = snapshot.child("Respuestas").child(ID_Alumno).val().In_7;
+                var In_8 = snapshot.child("Respuestas").child(ID_Alumno).val().In_8;
+                var In_9 = snapshot.child("Respuestas").child(ID_Alumno).val().In_9;
+                var In_10 = snapshot.child("Respuestas").child(ID_Alumno).val().In_10;
+                var In_11 = snapshot.child("Respuestas").child(ID_Alumno).val().In_11;
+                var In_12 = snapshot.child("Respuestas").child(ID_Alumno).val().In_12;
+                var In_13 = snapshot.child("Respuestas").child(ID_Alumno).val().In_13;
+                var In_14 = snapshot.child("Respuestas").child(ID_Alumno).val().In_14;
+                var In_15 = snapshot.child("Respuestas").child(ID_Alumno).val().In_15;
+                var In_16 = snapshot.child("Respuestas").child(ID_Alumno).val().In_16;
+                var In_17 = snapshot.child("Respuestas").child(ID_Alumno).val().In_17;
+                var In_18 = snapshot.child("Respuestas").child(ID_Alumno).val().In_18;
+                var In_19 = snapshot.child("Respuestas").child(ID_Alumno).val().In_19;
+                var In_20 = snapshot.child("Respuestas").child(ID_Alumno).val().In_20;
+                var Calificacion = snapshot.child("Respuestas").child(ID_Alumno).val().Calificacion;
+                var CedulaA = snapshot.child("Respuestas").child(ID_Alumno).val().CedulaA;
+                var NombreA = snapshot.child("Respuestas").child(ID_Alumno).val().NombreA;
+                var Reporte = snapshot.child("Respuestas").child(ID_Alumno).val().Reporte;
+                var RespuestaGPT = snapshot.child("Respuestas").child(ID_Alumno).val().RespuestaGPT;
+
+
+
+                document.getElementById("In_1").value = Que;
+                document.getElementById("In_2").value = Donde;
+                document.getElementById("In_3").value = Cuando;
+                document.getElementById("In_4").value = Quien;
+                document.getElementById("In_5").value = Problema;
+
+
+                document.getElementById("In_6").value = In_6;
+                document.getElementById("In_7").value = In_7;
+                document.getElementById("In_8").value = In_8;
+                document.getElementById("In_9").value = In_9;
+                document.getElementById("In_10").value = In_10;
+
+                document.getElementById("In_11").value = In_11;
+                document.getElementById("In_12").value = In_12;
+                document.getElementById("In_13").value = In_13;
+                document.getElementById("In_14").value = In_14;
+                document.getElementById("In_15").value = In_15;
+                document.getElementById("In_16").value = In_16;
+                document.getElementById("In_17").value = In_17;
+                document.getElementById("In_18").value = In_18;
+                document.getElementById("In_19").value = In_19;
+                document.getElementById("In_20").value = In_20;
+
+
+                document.getElementById("In_NombreA").value = NombreA;
+                document.getElementById("In_Cedula").value = CedulaA;
+                document.getElementById("Informe").innerHTML = Reporte;
+                MostrarChatGPT(RespuestaGPT);
+                                         
+            }
+            else{
+                location.href = "Materias.html";
+                return;
+            }
+        })
+        .catch((error) => {
+            location.reload();
+        });
+    }
+
+    function MostrarChatGPT(mensaje){
+        var Separar1 = [];
+        Separar1 = mensaje.split("\n");
+
+            var Almacenamiento = [];
+
+            var Tipo = "";
+            var TempAlmacenamiento = "";
+            var Seccion = 0;
+            var Contador = 0;
+            var Contador_In = 6;
+            for (let j = 0; j < Separar1.length; j++) {
+                            
+                if(Separar1[j].includes("**:")){
+                    Tipo = Separar1[j];                                        
+                    if(TempAlmacenamiento != ""){
+                        Almacenamiento.push(TempAlmacenamiento);
+                        TempAlmacenamiento = "";
+                    }
+                    Almacenamiento.push(Separar1[j])
+
+                }
+
+                if(!Separar1[j].includes("### ") && !Separar1[j].includes("**:")){
+                    TempAlmacenamiento = TempAlmacenamiento + Separar1[j]+"\n";
+                }
+
+                if(Separar1[j].includes("### ")){
+                    if(TempAlmacenamiento != ""){
+                        Almacenamiento.push(TempAlmacenamiento);
+                        TempAlmacenamiento = "";
+                    }
+                    Almacenamiento.push(Separar1[j])
+                }
+
+              
+                if(Separar1.length == j+1){
+                    if(TempAlmacenamiento != ""){
+                        Almacenamiento.push(TempAlmacenamiento);
+                    }
+                }
+
+            }
+   
+        for (let index = 0; index < Almacenamiento.length; index++) {
+
+            if(Almacenamiento[index].includes("### Análisis del Problema") || Almacenamiento[index].includes("### Identificación de Causas") || Almacenamiento[index].includes("### Toma de Acciones")){
+                if(Almacenamiento[index].includes("### Análisis del Problema")){                
+                    Seccion = 2;
+                }
+                if(Almacenamiento[index].includes("### Identificación de Causas")){                
+                    Seccion = 1;
+                }
+                if(Almacenamiento[index].includes("### Toma de Acciones")){                
+                    Seccion = 2;
+                }
+            }
+            else{
+        
+            Contador = Contador + 1;
+            if(Contador == Seccion){
+                document.getElementById("InC_"+Contador_In).value = Almacenamiento[index];
+                Contador_In = Contador_In + 1;
+                Contador = 0;
+            }
+        }
+        }
+        document.getElementById("InC_5").value = document.getElementById("In_5").value;
+        
+        document.getElementById("loading").style.display = "none";
+        document.getElementById("Mostrar2").style.display = "inline";
+        document.getElementById("ContenedorGeneral").style.display = "inline-block";    
+    }
+</script>

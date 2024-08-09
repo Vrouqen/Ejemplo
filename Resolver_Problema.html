@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resolver Problema</title>
+    <link rel="shortcut icon" href="Imagenes/iconoWebC.jpg">  
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+
+    <div id="loading">
+        <img src="Imagenes/loading.png">
+    </div>
+
+    <div id="ContenedorGeneral">
+        <h1>Problema de registro</h1>
+
+        <div class="Contenedor">
+    
+            <div class="Formulario">
+                <h2>Nombre del Estudiante</h2>    
+                <input id="In_NombreA" class="Text_Formulario" autocomplete="off" placeholder="Ingrese su nombre">
+    
+                <h2>Cédula del Estudiante</h2>    
+                <input id="In_Cedula" class="Text_Formulario" autocomplete="off" placeholder="Ingrese su cédula" maxlength="10" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+                
+                
+                <h2>¿Qué?</h2>    
+                <textarea id="In_1" class="Text_Formulario" placeholder="Especifica el problema aquí" disabled>La línea de producción se detuvo inesperadamente.</textarea> 
+                
+                <h2>¿Dónde?</h2>    
+                <textarea id="In_2" class="Text_Formulario" placeholder="Ubicación del problema" disabled>Planta de ensamblaje, Línea 2.</textarea> 
+    
+    
+                <h2>¿Cuándo?</h2>    
+                <textarea id="In_3" disabled class="Text_Formulario" placeholder="Fecha y hora del problema">25 de julio de 2024, 10:30 AM.</textarea> 
+    
+    
+                <h2>¿Quién?</h2>    
+                <textarea id="In_4" disabled class="Text_Formulario" placeholder="Persona involucrada">Operador Juan Pérez</textarea> 
+            </div>
+    
+        </div>
+    
+    
+        <div id="Divisor">
+            <div id="Mostrar1">
+    
+    
+                <h1>Analizar el problema</h1>
+        
+                <div class="Contenedor">
+            
+                    <div class="fishbone">
+            
+                        <div class="problem">
+                            <table>
+                                <tr>
+                                    <th>Problema</th>
+                                </tr>
+                                <tr>
+                                    <td><textarea disabled id="In_5">La combinación de un fallo en el motor de la maquinaria y el uso de materiales de calidad inferior provocó la parada de la línea de producción. Factores adicionales como la falta de capacitación adecuada del personal, la ausencia de mantenimiento preventivo programado, la supervisión ineficaz, y las condiciones ambientales desfavorables también contribuyeron al problema.</textarea></td>
+                                </tr>
+                            </table>
+                
+                        </div>
+                
+                        <div class="bone">
+                            <div class="causes">
+                                <div class="cause">
+                                    <table>
+                                        <tr>
+                                            <th>Gestión</th>
+                                        </tr>
+                                        <tr>
+                                            <td><textarea id="In_8" placeholder="1.
+                                                2.
+                                                3.
+                                                4.
+                                                5."></textarea></td>
+                                        </tr>                      
+                                    </table>
+                                    
+                                </div>
+                                <div class="cause">
+                                    <table>
+                                        <tr>
+                                            <th>Medio</th>
+                                        </tr>
+                                        <tr>
+                                            <td><textarea id="In_11" placeholder="1.
+                                                2.
+                                                3.
+                                                4.
+                                                5."></textarea></td>
+                                        </tr>
+                                       
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bone">
+                            <div class="causes">
+                                <div class="cause">
+                                    <table>
+                                        <tr>
+                                            <th>Máquina</th>
+                                        </tr>
+                                        <tr>
+                                            <td><textarea id="In_7" placeholder="1.
+                                                2.
+                                                3.
+                                                4.
+                                                5."></textarea></td>
+                                        </tr>                      
+                                    </table>
+                                    
+                                </div>
+                                <div class="cause">
+                                    <table>
+                                        <tr>
+                                            <th>Material</th>
+                                        </tr>
+                                        <tr>
+                                            <td><textarea id="In_10" placeholder="1.
+                                                2.
+                                                3.
+                                                4.
+                                                5."></textarea></td>
+                                        </tr>
+                                       
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bone">
+                            <div class="causes">
+                                <div class="cause">
+                                    <table>
+                                        <tr>
+                                            <th>Hombre</th>
+                                        </tr>
+                                        <tr>
+                                            <td><textarea id="In_6" placeholder="1.
+                                                2.
+                                                3.
+                                                4.
+                                                5."></textarea></td>
+                                        </tr>                      
+                                    </table>
+                                    
+                                </div>
+                                <div class="cause">
+                                    <table>
+                                        <tr>
+                                            <th>Método</th>
+                                        </tr>
+                                        <tr>
+                                            <td><textarea id="In_9" placeholder="1.
+                                                2.
+                                                3.
+                                                4.
+                                                5."></textarea></td>
+                                        </tr>
+                                       
+                                    </table>
+                                </div>
+                            </div>
+                        </div>          
+                    </div>
+            
+                </div>
+            
+                <h1>Identificar las causas</h1>
+                <div class="Contenedor">
+                    <div class="fishbone">
+                        <div class="causes">
+                            <div class="cause">
+                                <table>
+                                    <tr>
+                                        <th><input id="In_14" autocomplete="off" placeholder="C"></th>
+                                    </tr>
+                                    <tr>
+                                        <td><textarea id="In_15" placeholder="1.
+                                            2.
+                                            3.
+                                            4.
+                                            5."></textarea></td>
+                                    </tr>                      
+                                </table>
+                                
+                            </div>                   
+                        </div>                           
+                        <div class="causes">
+                            <div class="cause">
+                                <table>
+                                    <tr>
+                                        <th><input id="In_12" autocomplete="off" placeholder="B"></th>
+                                    </tr>
+                                    <tr>
+                                        <td><textarea id="In_13" placeholder="1.
+                                            2.
+                                            3.
+                                            4.
+                                            5."></textarea></td>
+                                    </tr>                      
+                                </table>
+                                
+                            </div>                   
+                        </div>  
+                        <div class="causes">
+                            <div class="cause">
+                                <table>
+                                    <tr>
+                                        <th><input id="In_16" autocomplete="off" placeholder="A"></th>
+                                    </tr>
+                                    <tr>
+                                        <td><textarea id="In_17" placeholder="1.
+                                            2.
+                                            3.
+                                            4.
+                                            5."></textarea></td>
+                                    </tr>                      
+                                </table>
+                                
+                            </div>                   
+                        </div>   
+                    </div>
+            
+                </div>
+            
+                <h1>Tomar Acción</h1>
+                <div class="Contenedor">
+                    <div class="fishbone">
+                        <div class="causes">
+                            <div class="cause">
+                                <table>
+                                    <tr>
+                                        <th>¿Cuándo?</th>
+                                    </tr>
+                                    <tr>
+                                        <td><textarea id="In_20" placeholder="1.
+                                            2.
+                                            3.
+                                            4.
+                                            5."></textarea></td>
+                                    </tr>                      
+                                </table>
+                                
+                            </div>                   
+                        </div>
+            
+                        <div class="causes">
+                            <div class="cause">
+                                <table>
+                                    <tr>
+                                        <th>¿Quién?</th>
+                                    </tr>
+                                    <tr>
+                                        <td><textarea id="In_19" placeholder="1.
+                                            2.
+                                            3.
+                                            4.
+                                            5."></textarea></td>
+                                    </tr>                      
+                                </table>
+                                
+                            </div>                   
+                        </div>   
+                        
+                        <div class="causes">
+                            <div class="cause">
+                                <table>
+                                    <tr>
+                                        <th>¿Qué?</th>
+                                    </tr>
+                                    <tr>
+                                        <td><textarea id="In_18" placeholder="1.
+                                            2.
+                                            3.
+                                            4.
+                                            5."></textarea></td>
+                                    </tr>                      
+                                </table>
+                            </div>                   
+                        </div> 
+                    </div>
+            
+                </div>
+            </div>
+
+            <div id="Mostrar2">
+                <h1>Analizar el problema con ChatGPT</h1>
+                <div class="Contenedor">
+                    <div class="fishbone">
+                        <div class="problem">
+                            <table>
+                                <tr>
+                                    <th>Problema</th>
+                                </tr>
+                                <tr>
+                                    <td><textarea disabled id="InC_5"></textarea></td>
+                                </tr>
+                            </table>
+                        </div>
+                
+                        <div class="bone">
+                            <div class="causes">
+                                <div class="cause">
+                                    <table>
+                                        <tr>
+                                            <th>Gestión</th>
+                                        </tr>
+                                        <tr>
+                                            <td><textarea disabled id="InC_8" placeholder="1.
+                                                2.
+                                                3.
+                                                4.
+                                                5."></textarea></td>
+                                        </tr>                      
+                                    </table>
+                                </div>
+                                <div class="cause">
+                                    <table>
+                                        <tr>
+                                            <th>Medio</th>
+                                        </tr>
+                                        <tr>
+                                            <td><textarea disabled id="InC_11" placeholder="1.
+                                                2.
+                                                3.
+                                                4.
+                                                5."></textarea></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bone">
+                            <div class="causes">
+                                <div class="cause">
+                                    <table>
+                                        <tr>
+                                            <th>Máquina</th>
+                                        </tr>
+                                        <tr>
+                                            <td><textarea disabled id="InC_7" placeholder="1.
+                                                2.
+                                                3.
+                                                4.
+                                                5."></textarea></td>
+                                        </tr>                      
+                                    </table>
+                                </div>
+                                <div class="cause">
+                                    <table>
+                                        <tr>
+                                            <th>Material</th>
+                                        </tr>
+                                        <tr>
+                                            <td><textarea disabled id="InC_10" placeholder="1.
+                                                2.
+                                                3.
+                                                4.
+                                                5."></textarea></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bone">
+                            <div class="causes">
+                                <div class="cause">
+                                    <table>
+                                        <tr>
+                                            <th>Hombre</th>
+                                        </tr>
+                                        <tr>
+                                            <td><textarea disabled id="InC_6" placeholder="1.
+                                                2.
+                                                3.
+                                                4.
+                                                5."></textarea></td>
+                                        </tr>                      
+                                    </table>
+                                </div>
+                                <div class="cause">
+                                    <table>
+                                        <tr>
+                                            <th>Método</th>
+                                        </tr>
+                                        <tr>
+                                            <td><textarea disabled id="InC_9" placeholder="1.
+                                                2.
+                                                3.
+                                                4.
+                                                5."></textarea></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>          
+                    </div>
+                </div>
+            
+                <h1>Identificar las causas con ChatGPT</h1>
+                <div class="Contenedor">
+                    <div class="fishbone">
+                        <div class="causes">
+                            <div class="cause">
+                                <table>
+                                    <tr>
+                                        <th><input disabled id="InC_14" autocomplete="off" placeholder="C"></th>
+                                    </tr>
+                                    <tr>
+                                        <td><textarea disabled id="InC_15" placeholder="1.
+                                            2.
+                                            3.
+                                            4.
+                                            5."></textarea></td>
+                                    </tr>                      
+                                </table>
+                            </div>                   
+                        </div>                            
+                        <div class="causes">
+                            <div class="cause">
+                                <table>
+                                    <tr>
+                                        <th><input disabled id="InC_12" autocomplete="off" placeholder="B"></th>
+                                    </tr>
+                                    <tr>
+                                        <td><textarea disabled id="InC_13" placeholder="1.
+                                            2.
+                                            3.
+                                            4.
+                                            5."></textarea></td>
+                                    </tr>                      
+                                </table>
+                            </div>                   
+                        </div>  
+                        <div class="causes">
+                            <div class="cause">
+                                <table>
+                                    <tr>
+                                        <th><input disabled id="InC_16" autocomplete="off" placeholder="A"></th>
+                                    </tr>
+                                    <tr>
+                                        <td><textarea disabled id="InC_17" placeholder="1.
+                                            2.
+                                            3.
+                                            4.
+                                            5."></textarea></td>
+                                    </tr>                      
+                                </table>
+                            </div>                   
+                        </div>   
+                    </div>
+                </div>
+            
+                <h1>Tomar Acción con ChatGPT</h1>
+                <div class="Contenedor">
+                    <div class="fishbone">
+                        <div class="causes">
+                            <div class="cause">
+                                <table>
+                                    <tr>
+                                        <th>¿Cuándo?</th>
+                                    </tr>
+                                    <tr>
+                                        <td><textarea disabled id="InC_20" placeholder="1.
+                                            2.
+                                            3.
+                                            4.
+                                            5."></textarea></td>
+                                    </tr>                      
+                                </table>
+                            </div>                   
+                        </div>
+            
+                        <div class="causes">
+                            <div class="cause">
+                                <table>
+                                    <tr>
+                                        <th>¿Quién?</th>
+                                    </tr>
+                                    <tr>
+                                        <td><textarea disabled id="InC_19" placeholder="1.
+                                            2.
+                                            3.
+                                            4.
+                                            5."></textarea></td>
+                                    </tr>                      
+                                </table>
+                            </div>                   
+                        </div>   
+                        
+                        <div class="causes">
+                            <div class="cause">
+                                <table>
+                                    <tr>
+                                        <th>¿Qué?</th>
+                                    </tr>
+                                    <tr>
+                                        <td><textarea disabled id="InC_18" placeholder="1.
+                                            2.
+                                            3.
+                                            4.
+                                            5."></textarea></td>
+                                    </tr>                      
+                                </table>
+                            </div>                   
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>   
+    
+        <br>
+        <h1>Reporte</h1>
+        <div class="Contenedor">
+            <div class="Formulario">
+                <p id="Informe"></p>
+            </div>
+        </div>
+        <button id="Guardar">Guardar</button>
+    </div>
+
+    <script src="BaseDatos.js"></script>
+
+</body>
+</html>
+
+
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics.js";
+    
+    const firebaseConfig = {
+        apiKey: window.apiKey,
+        authDomain: window.authDomain,
+        databaseURL: window.databaseURL,
+        projectId: window.projectId,
+        storageBucket: window.storageBucket,
+        messagingSenderId: window.messagingSenderId,
+        appId: window.appId,
+        measurementId: window.measurementId
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+
+    import {getDatabase,ref,set,child,update,remove,get,push,onValue}
+    from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
+    const db =getDatabase();
+    const dbRef = ref(getDatabase());
+   
+
+    var ID = localStorage.getItem('Materia_ID');
+
+    if(ID == null){
+       location.href = "index.html";
+    }
+
+    const apiKey = window.ApiGPT;// Reemplaza 'TU_API_KEY' con tu clave de API de OpenAI
+    const url = 'https://api.openai.com/v1/chat/completions';
+
+    var ResultadoEstudiante = "";
+    var ResultadoChatGPT = "";
+    var Rango_Calificacion = 0;
+    var Reporte_Subir = "";
+    var Calificacion_Subir = "";
+
+    LeerMaterias();
+
+    //Leer Base de datos
+    function LeerMaterias(){
+        get(child(dbRef, "Ejercicios/"+ID)).then((snapshot) => {
+            if(snapshot.exists()){                
+
+                var Que = snapshot.val().Que;
+                var Donde = snapshot.val().Donde;
+                var Cuando = snapshot.val().Cuando;
+                var Quien = snapshot.val().Quien;
+                var Problema = snapshot.val().Problema;
+
+                document.getElementById("In_1").value = Que;
+                document.getElementById("In_2").value = Donde;
+                document.getElementById("In_3").value = Cuando;
+                document.getElementById("In_4").value = Quien;
+                document.getElementById("In_5").value = Problema;
+
+                document.getElementById("loading").style.display = "none";
+                document.getElementById("ContenedorGeneral").style.display = "inline-block";                
+            }
+            else{
+                location.href = "index.html";
+                return;
+            }
+        })
+        .catch((error) => {
+            location.reload();
+        });
+    }
+
+  
+    // En este botón se encuentra la instrucción para generar el contenido por medio de IA
+    document.getElementById("Guardar").onclick = function(e){
+        var In_1 = document.getElementById("In_1").value;
+        var In_2 = document.getElementById("In_2").value;
+        var In_3 = document.getElementById("In_3").value;
+        var In_4 = document.getElementById("In_4").value;
+        var In_5 = document.getElementById("In_5").value;
+        var In_6 = document.getElementById("In_6").value;
+        var In_7 = document.getElementById("In_7").value;
+        var In_8 = document.getElementById("In_8").value;
+        var In_9 = document.getElementById("In_9").value;
+        var In_10 = document.getElementById("In_10").value;
+        var In_11 = document.getElementById("In_11").value;
+        var In_12 = document.getElementById("In_12").value;
+        var In_13 = document.getElementById("In_13").value;
+        var In_14 = document.getElementById("In_14").value;
+        var In_15 = document.getElementById("In_15").value;
+        var In_16 = document.getElementById("In_16").value;
+        var In_17 = document.getElementById("In_17").value;
+        var In_18 = document.getElementById("In_18").value;
+        var In_19 = document.getElementById("In_19").value;
+        var In_20 = document.getElementById("In_20").value;
+
+        var In_NombreA = document.getElementById("In_NombreA").value;
+        var In_Cedula = document.getElementById("In_Cedula").value;
+
+        
+        if(In_NombreA == ""){
+            alert("Ingrese su nombre");
+            return;
+        }
+
+        if(In_Cedula == ""){
+            alert("Ingrese su cédula");
+            return;
+        }
+
+        if(In_1 == ""){
+            alert("En la sección de Problema de registro, falta ingresar el campo 'Qué'")
+            return;
+        }
+        if(In_2 == ""){
+            alert("En la sección de Problema de registro, falta ingresar el campo 'Dónde'")
+            return;
+        }
+        if(In_3 == ""){
+            alert("En la sección de Problema de registro, falta ingresar el campo 'Cuándo'")
+            return;
+        }
+        if(In_4 == ""){
+            alert("En la sección de Problema de registro, falta ingresar el campo 'Quién'")
+            return;
+        }
+        if(In_5 == ""){
+            alert("En la sección de Analizar el problema, falta ingresar el Problema")
+            return;
+        }
+        if(!window.navigator.onLine){
+            alert("Compruebe la conexión a internet");
+            return;
+        } 
+        
+        // Obtenermos lo escrito por el Usuario
+        ResultadoEstudiante = `
+        ${In_6}
+        ${In_7}
+        ${In_8}
+        ${In_9}
+        ${In_10}
+        ${In_11}
+        ${In_16}
+        ${In_17}
+        ${In_12}
+        ${In_13}
+        ${In_14} 
+        ${In_15} 
+        ${In_18}
+        ${In_19}
+        ${In_20}
+        `;
+
+        // Aqui se encuentra la instruccion que se le pasa a la IA y genere el contenido
+        var Instrucciones = `
+                    Actúa como un experto en resolución de problemas utilizando el ciclo PDCA (Plan-Do-Check-Act). Te proporcionaré información sobre el Registro del Problema y el Problema. A partir de esta información, por favor, genera el Análisis del Problema, Identificación de Causas y la Toma de Acciones detallada.
+
+                    ### Registro del Problema
+                    - **Qué**: ${In_1}
+                    - **Dónde**: ${In_2}
+                    - **Cuándo**: ${In_3}
+                    - **Quién**: ${In_4}
+
+                    ### Problema
+                    ${In_5}
+
+                    ### Análisis del Problema
+                    Proporciona un análisis exhaustivo del problema considerando los siguientes factores, da al menos 5 items por cada uno:
+                    - **Hombre**: Analiza cómo las habilidades, la formación y el comportamiento del personal pueden estar influyendo en el problema.
+                    - **Máquina**: Examina el estado, el mantenimiento y la funcionalidad de las máquinas involucradas.
+                    - **Gestión**: Evalúa las prácticas de gestión, la supervisión y la toma de decisiones.
+                    - **Método**: Revisa los procedimientos y procesos seguidos para identificar posibles ineficiencias o errores.
+                    - **Material**: Considera la calidad, la disponibilidad y el manejo de los materiales utilizados.
+                    - **Medio Ambiente**: Investiga el entorno de trabajo, las condiciones ambientales y cualquier factor externo que pueda estar afectando el problema.
+
+                    ### Identificación de Causas
+                    Identifica las causas subyacentes del problema, agrupándolas en las siguientes categorías, da al menos 5 items por cada uno:
+                    1. **Capacitación del Personal**:
+                    - Evaluar la formación y competencias del personal.
+                    - Identificar si hay deficiencias en el conocimiento o habilidades.
+                    - Determinar la necesidad de capacitación adicional o actualizaciones.
+
+                    2. **Mantenimiento de Maquinaria**:
+                    - Revisar el historial de mantenimiento de la maquinaria.
+                    - Identificar si el mantenimiento es adecuado y oportuno.
+                    - Evaluar la frecuencia y calidad de las inspecciones y reparaciones.
+
+                    3. **Calidad de los Materiales**:
+                    - Analizar si los materiales cumplen con las especificaciones requeridas.
+                    - Identificar si hay problemas con la calidad o el suministro de materiales.
+                    - Determinar si la manipulación de materiales está causando problemas.
+
+                    ### Toma de Acciones
+                    Proporciona un plan de acción detallado para abordar y resolver el problema, da al menos 5 items por cada uno:
+                    - **Qué**: Describe las acciones específicas que se deben tomar para solucionar el problema.
+                    - Ejemplo: Implementar una nueva rutina de mantenimiento preventivo, proporcionar capacitación adicional al personal, o cambiar proveedores de materiales.
+                    - **Quién**: Identifica las personas o equipos responsables de ejecutar cada acción.
+                    - Ejemplo: El equipo de mantenimiento, el departamento de recursos humanos, el proveedor de materiales.
+                    - **Cuándo**: Establece un cronograma para la implementación de cada acción.
+                    - Ejemplo: Iniciar la capacitación en dos semanas, realizar una revisión de maquinaria mensualmente, actualizar los procedimientos de calidad en el próximo trimestre.
+
+                   
+                    `
+                            ;
+
+        document.getElementById("loading").style.display = "inline";
+        document.getElementById("ContenedorGeneral").style.display = "none";        
+
+        document.getElementById("Mostrar2").style.display = "none";
+        document.getElementById("Informe").innerHTML = "";
+
+        GenerarMaterial(Instrucciones);        
+
+
+
+
+    }
+    
+
+
+    async function GenerarMaterial(Instrucciones) {
+            const data = {
+                model: 'gpt-3.5-turbo',
+                messages: [
+                    { role: 'user', content: Instrucciones }    
+                ],
+                max_tokens: 4000,
+                temperature: 0.5 // Puedes ajustar este valor según tus necesidades
+            };
+            const requestOptions = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${apiKey}`
+                },
+                body: JSON.stringify(data)
+            };
+
+            try {                
+
+                const response = await fetch(url, requestOptions);                
+                const responseData = await response.json();
+                const mensaje = responseData.choices[0].message.content;
+                ResultadoChatGPT = mensaje;
+                MostrarChatGPT(mensaje);
+                            
+            } catch (error) {
+                await GenerarMaterial(Instrucciones);                   
+            }
+        }
+
+
+
+    function MostrarChatGPT(mensaje){
+        var Separar1 = [];
+        Separar1 = mensaje.split("\n");
+
+            var Almacenamiento = [];
+
+            var Tipo = "";
+            var TempAlmacenamiento = "";
+            var Seccion = 0;
+            var Contador = 0;
+            var Contador_In = 6;
+            for (let j = 0; j < Separar1.length; j++) {
+                            
+                if(Separar1[j].includes("**:")){
+                    Tipo = Separar1[j];                                        
+                    if(TempAlmacenamiento != ""){
+                        Almacenamiento.push(TempAlmacenamiento);
+                        TempAlmacenamiento = "";
+                    }
+                    Almacenamiento.push(Separar1[j])
+
+                }
+
+                if(!Separar1[j].includes("### ") && !Separar1[j].includes("**:")){
+                    TempAlmacenamiento = TempAlmacenamiento + Separar1[j]+"\n";
+                }
+
+                if(Separar1[j].includes("### ")){
+                    if(TempAlmacenamiento != ""){
+                        Almacenamiento.push(TempAlmacenamiento);
+                        TempAlmacenamiento = "";
+                    }
+                    Almacenamiento.push(Separar1[j])
+                }
+
+              
+                if(Separar1.length == j+1){
+                    if(TempAlmacenamiento != ""){
+                        Almacenamiento.push(TempAlmacenamiento);
+                    }
+                }
+
+            }
+
+            
+        for (let index = 0; index < Almacenamiento.length; index++) {
+            if(Almacenamiento[index].includes("### Análisis del Problema") || Almacenamiento[index].includes("### Identificación de Causas") || Almacenamiento[index].includes("### Toma de Acciones")){
+                if(Almacenamiento[index].includes("### Análisis del Problema")){                
+                    Seccion = 2;
+                }
+                if(Almacenamiento[index].includes("### Identificación de Causas")){                
+                    Seccion = 1;
+                }
+                if(Almacenamiento[index].includes("### Toma de Acciones")){                
+                    Seccion = 2;
+                }
+            }
+            else{
+                Contador = Contador + 1;
+                if(Contador == Seccion){
+                    document.getElementById("InC_"+Contador_In).value = Almacenamiento[index];
+                    Contador_In = Contador_In + 1;
+                    Contador = 0;
+                }
+            }
+        }
+
+
+        document.getElementById("InC_5").value = document.getElementById("In_5").value;
+        document.getElementById("Mostrar2").style.display = "inline";
+
+        var In_1 = document.getElementById("In_1").value;
+        var In_2 = document.getElementById("In_2").value;
+        var In_3 = document.getElementById("In_3").value;
+        var In_4 = document.getElementById("In_4").value;
+        var In_5 = document.getElementById("In_5").value;    
+
+
+
+        // En esta sección validamos las calificaciones según rango de contenido para ser estrictos
+        // El rango de calificaciones se da de acuerdo al contenido realizado por el usuario mientras más campos haya llenado el rango más se amplía
+        var Rango = "";
+
+        if(ResultadoEstudiante.length <= 40){
+            Rango = "0 a 1";
+            Rango_Calificacion = 1;
+        }
+        else{
+            if(ResultadoChatGPT.length / 4 >= ResultadoEstudiante.length && 40 < ResultadoEstudiante.length){
+            Rango = "0 a 2";
+            Rango_Calificacion = 2;
+            }
+
+            if(ResultadoChatGPT.length / 3 >= ResultadoEstudiante.length && ResultadoChatGPT.length / 4 < ResultadoEstudiante.length){
+                Rango = "0 a 4";
+                Rango_Calificacion = 4;
+            }
+
+            if(ResultadoChatGPT.length / 1.8 >= ResultadoEstudiante.length && ResultadoChatGPT.length / 3 < ResultadoEstudiante.length){
+                Rango = "0 a 5";
+                Rango_Calificacion = 5;
+            }
+
+            if(ResultadoChatGPT.length / 1.3 >= ResultadoEstudiante.length && ResultadoChatGPT.length / 1.8 < ResultadoEstudiante.length){
+                Rango = "0 a 7";
+                Rango_Calificacion = 7;
+            }
+
+            if(ResultadoChatGPT.length / 1.1 >= ResultadoEstudiante.length && ResultadoChatGPT.length / 1.3 < ResultadoEstudiante.length){
+                Rango = "0 a 8";
+                Rango_Calificacion = 8;
+            }
+
+            if(ResultadoChatGPT.length / 1.1 < ResultadoEstudiante.length){
+                Rango = "0 a 10";
+                Rango_Calificacion = 10;
+            }
+        }
+
+
+
+        var Instrucciones_Reportes = `
+
+            Eres un experto en la comparación y calificación de textos dentro del rango del ${Rango}. Los textos a comparar son:
+
+            Texto del usuario: ${ResultadoEstudiante} (este es el texto que se calificará)
+            Texto proporcionado por la IA: ${ResultadoChatGPT} (este texto no se calificará)
+            Por favor, proporciona una calificación para el texto del usuario según la escala definida en ${Rango}.
+
+            Indica la calificación en el formato Calificacion / 10, donde Calificacion es la calificación ajustada a la escala del ${Rango}.
+
+            Nota: La calificación debe ajustarse proporcionalmente al rango proporcionado, pero el denominador siempre debe ser /10. Si el contenido esta vacío o no tiene relación calificale con 0.
+
+
+            ### Recomendaciones Específicas:
+
+            Ampliar la Explicación: Sugiere agregar más detalles o ejemplos concretos para hacer la respuesta más completa.
+            Claridad y Cohesión: Recomienda mejorar la estructura y claridad del texto para que sea más fácil de entender.
+            Profundización: Indica áreas donde se podría profundizar más en el tema para proporcionar una comprensión más completa.
+            Estilo Académico: Aconseja el uso de un lenguaje más formal o técnico, según sea necesario, para adecuarse al estilo requerido.
+
+
+            Genera el informe en formato HTML con la siguiente estructura:
+
+            <p><strong>Comparación y Calificación de Textos:</strong></p>
+            <ul>
+                <li><strong>Contenidos Clave:</strong> [Descripción aquí]</li>
+                <br>
+                <li><strong>Estructura y Organización:</strong> [Descripción aquí]</li>
+                <br>
+                <li><strong>Precisión y Relevancia:</strong> [Descripción aquí]</li>
+                <br>
+                <li><strong>Calificación Final:</strong> [Calificación aquí]/10</li>
+            </ul>
+
+            <br>
+            <p><strong>Recomendaciones Específicas:</strong></p>
+            <p>[Descripción aquí]</p>
+            `;
+
+        GenerarReporte(Instrucciones_Reportes)
+    }
+
+    async function GenerarReporte(Instrucciones) {
+        const data = {
+            model: 'gpt-3.5-turbo',
+            messages: [
+                { role: 'user', content: Instrucciones }    
+            ],
+            max_tokens: 4000,
+            temperature: 0.5 // Puedes ajustar este valor según tus necesidades
+        };
+
+        const requestOptions = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${apiKey}`
+            },
+            body: JSON.stringify(data)
+        };
+
+        try {                
+
+            const response = await fetch(url, requestOptions);                
+            const responseData = await response.json();
+            const mensaje = responseData.choices[0].message.content;
+            
+            var Separar = [];
+            Separar = mensaje.replaceAll("<strong>","").replaceAll("</strong>","").split("Calificación Final:");
+
+            var Separar1 = [];
+            Separar1 = Separar[1].split("/10");
+
+
+            var calificacion = parseFloat(Separar1[0]);
+            if (isNaN(calificacion)) {
+                await GenerarReporte(Instrucciones);                   
+            }
+
+            if(calificacion > Rango_Calificacion){
+                await GenerarReporte(Instrucciones);                   
+            }                
+
+            if(calificacion <= Rango_Calificacion){
+                document.getElementById("Informe").innerHTML = mensaje;
+                Reporte_Subir = mensaje;
+                Calificacion_Subir = Separar1[0];
+                SubirDatos();
+            }          
+        } catch (error) {
+            await GenerarReporte(Instrucciones);                   
+        }
+    }
+
+    function SubirDatos(){
+
+        var In_6 = document.getElementById("In_6").value;
+        var In_7 = document.getElementById("In_7").value;
+        var In_8 = document.getElementById("In_8").value;
+        var In_9 = document.getElementById("In_9").value;
+        var In_10 = document.getElementById("In_10").value;
+        var In_11 = document.getElementById("In_11").value;
+        var In_12 = document.getElementById("In_12").value;
+        var In_13 = document.getElementById("In_13").value;
+        var In_14 = document.getElementById("In_14").value;
+        var In_15 = document.getElementById("In_15").value;
+        var In_16 = document.getElementById("In_16").value;
+        var In_17 = document.getElementById("In_17").value;
+        var In_18 = document.getElementById("In_18").value;
+        var In_19 = document.getElementById("In_19").value;
+        var In_20 = document.getElementById("In_20").value;
+        var In_NombreA = document.getElementById("In_NombreA").value;
+        var In_Cedula = document.getElementById("In_Cedula").value;
+
+        var Crear_Ejercicio = ref(db, "Ejercicios/"+ ID +"/Respuestas/");                        
+        // Añadir un nuevo elemento utilizando push
+        const nuevoPushRef = push(Crear_Ejercicio, {
+            NombreA: In_NombreA,
+            CedulaA: In_Cedula,
+            In_6: In_6,           
+            In_7: In_7,           
+            In_8: In_8,           
+            In_9: In_9,           
+            In_10: In_10,
+            In_11: In_11,           
+            In_12: In_12,           
+            In_13: In_13,           
+            In_14: In_14,           
+            In_15: In_15,
+            In_16: In_16,           
+            In_17: In_17,           
+            In_18: In_18,           
+            In_19: In_19,           
+            In_20: In_20,
+            RespuestaGPT: ResultadoChatGPT,
+            Reporte: Reporte_Subir,
+            Calificacion: Calificacion_Subir
+        });
+
+        // Obtener el nombre del push generado
+        const nuevoPushKey = nuevoPushRef.key;
+
+        nuevoPushRef.then(() => {
+            alert("Se guardo correctamente");  
+            document.getElementById("loading").style.display = "none";
+            document.getElementById("ContenedorGeneral").style.display = "inline-block";                  
+        })
+        .catch((error) => {
+            remove(ref(db,  "Ejercicios/"+ ID +"/Respuestas/"+nuevoPushKey));   
+            SubirDatos();               
+        });
+
+    }
+</script>
+
+
+
+

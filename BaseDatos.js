@@ -1,6 +1,6 @@
 var apiKey = "AIzaSyBKDWgLz5FNK_5QedckuKAo_lZ-QPn_FT4";
 var authDomain = "ejemplo-b9698.firebaseapp.com";
-var databaseURL = "";
+var databaseURL = "https://ejemplo-b9698-default-rtdb.firebaseio.com/";
 var projectId = "ejemplo-b9698";
 var storageBucket = "ejemplo-b9698.appspot.com";
 var messagingSenderId = "254079836685";
